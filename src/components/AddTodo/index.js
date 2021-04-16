@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../../actions";
+import { editTodo, addTodo } from "../../actions";
 
-const AddTodo = ({ newId }) => {
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
+const AddTodo = ({ newId, edit }) => {
+  const [title, setTitle] = useState(edit ? edit.title : "");
+  const [body, setBody] = useState(edit ? edit.body : "");
   const dispatch = useDispatch();
 
   function submitTodo(e) {
@@ -14,9 +14,17 @@ const AddTodo = ({ newId }) => {
     setBody("");
   }
 
+  function saveTodo(e) {
+    e.preventDefault();
+    dispatch(editTodo({ title, body, id: newId }));
+    edit.setEditing(false)
+  }
+
+
   return (
     <tr>
       <td>
+        {edit && <button onClick={() => edit.setEditing(false)}>x</button>}
         <textarea
           style={{ resize: "vertical", width: "100%", minHeight: "40px" }}
           id="title"
@@ -37,12 +45,21 @@ const AddTodo = ({ newId }) => {
         ></textarea>
       </td>
       <td>
-        <input
-          onClick={(e) => submitTodo(e)}
-          type="submit"
-          value="submit"
-          form="form1"
-        />
+        {!edit ? (
+          <input
+            onClick={(e) => submitTodo(e)}
+            type="submit"
+            value="submit"
+            form="form1"
+          />
+        ) : (
+          <input
+            onClick={(e) => saveTodo(e)}
+            type="submit"
+            value="save"
+            form="form1"
+          />
+        )}
       </td>
     </tr>
   );
