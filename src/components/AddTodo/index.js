@@ -9,7 +9,7 @@ const AddTodo = () => {
 
   function submitTodo(e) {
     e.preventDefault();
-    dispatch(addTodo({title, body}))
+    dispatch(addTodo({title, body, completed: false}))
     setTitle('')
     setBody('')
   }
