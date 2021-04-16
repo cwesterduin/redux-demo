@@ -7,7 +7,7 @@ const TodoList = () => {
   const todos = useSelector((state) => state);
   console.log(todos);
   const todoList = todos.map((todo, i) => (
-    <Todo key={i} title={todo.title} body={todo.body} completed={false} />
+    <Todo key={i} title={todo.title} body={todo.body} todoId={todo.id} completed={todo.completed} />
   ));
   return (
     <>
