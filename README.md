@@ -1,3 +1,6 @@
 # react with router and redux practice
 
-aim to persist redux state in local storage and have "dynamic" pages
+- [x] 'dynamic' pages
+- [ ] implemenet CRUD functionality
+- [ ] persist redux state in local storage
+- [ ] good test covergae
