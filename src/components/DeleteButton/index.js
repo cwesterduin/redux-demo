@@ -6,7 +6,12 @@ const DeleteButton = ({ todoId }) => {
     const dispatch = useDispatch();
 
     function handleClick(){
-        dispatch(deleteTodo(todoId))
+        if (confirm('are you sure?')) {
+            // Save it!
+            dispatch(deleteTodo(todoId))
+          } else {
+            // Do nothing!
+          }
     }
 
     return (

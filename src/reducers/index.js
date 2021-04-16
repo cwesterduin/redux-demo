@@ -12,6 +12,12 @@ const todoState = (state = [{id: 1, title: 'create todos', body: 'see above', co
         const todoToDelete = newDeleteState.findIndex(todo => todo.id === action.payload)
         newDeleteState.splice(todoToDelete, 1)
         return newDeleteState
+      case 'EDIT_TODO':
+         const newEditState = [...state]
+         const todoToEdit = newEditState.findIndex(todo => todo.id === action.payload.id)
+         const todoCompletedVal = newEditState.find(todo => todo.id === action.payload.id).completed
+         newEditState[todoToEdit] = {...action.payload, completed: todoCompletedVal}
+         return newEditState    
       default:
         return state
     }
