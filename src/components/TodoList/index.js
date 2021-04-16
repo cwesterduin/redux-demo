@@ -21,7 +21,7 @@ const TodoList = () => {
         </thead>
       <tbody>
       {todoList}
-      <AddTodo />
+      <AddTodo newId={todoList.length + 1} />
       </tbody>
     </table>
     

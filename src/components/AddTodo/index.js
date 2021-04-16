@@ -2,14 +2,14 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { addTodo } from '../../actions';
 
-const AddTodo = () => {
+const AddTodo = ({ newId }) => {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const dispatch = useDispatch()
 
   function submitTodo(e) {
     e.preventDefault();
-    dispatch(addTodo({title, body, completed: false}))
+    dispatch(addTodo({title, body, completed: false, id: newId}))
     setTitle('')
     setBody('')
   }
