@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { toggleTodo } from "../../actions";
 import { NavLink } from "react-router-dom";
+import { DeleteButton } from ".."
 
 const Todo = ({ title, body, completed, todoId }) => {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const Todo = ({ title, body, completed, todoId }) => {
   return (
     <tr>
       <td>
+        <DeleteButton todoId={todoId}/>
+        <button>✎</button>
         {title}
         <NavLink style={{ float: "right" }} to={`/todo/${todoId}`}>
           more...
