@@ -1,3 +1,2 @@
-// write redux actions here
-// e.g.
-// export const addUser = newUser => ({ type: 'ADD_USER', payload: newUser })
+export const addTodo = content => ({ type: 'ADD_TODO', payload: content })
+export const toggleTodo = id => ({ type: 'TOGGLE_TODO', payload: id })

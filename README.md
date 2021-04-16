@@ -1,1 +1,3 @@
-# template for react applications with react-dom-router and redux
+# react with router and redux practice
+
+aim to persist redux state in local storage and have "dynamic" pages
