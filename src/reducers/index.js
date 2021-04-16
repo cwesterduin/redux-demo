@@ -3,7 +3,6 @@ const todoState = (state = [{id: 1, title: 'create todos', body: 'see above', co
       case 'ADD_TODO':
         return state.concat([action.payload])
       case 'TOGGLE_TODO':
-        console.log(action.payload)
         const newState = [...state]
         const todoToToggle = newState.find(todo => todo.id === action.payload)
         todoToToggle.completed = !todoToToggle.completed

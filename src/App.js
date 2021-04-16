@@ -7,7 +7,8 @@ const App = () => {
     <Layout>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/todo" component={Todo} />
+        <Route exact path="/todo" component={Todo} />
+        <Route path="/todo/:id" render={() => <h1>...</h1>} />
       </Switch>
     </Layout>
   );
