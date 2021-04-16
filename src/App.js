@@ -2,7 +2,13 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom';
 import { Home, Todo, TodoSolo } from './pages'
 import { Layout } from './layout'
+import { useLocalState } from './customHooks'
+
+
 const App = () => {
+
+  useLocalState()
+
   return (
     <Layout>
       <Switch>

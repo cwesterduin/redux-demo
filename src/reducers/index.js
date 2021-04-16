@@ -1,5 +1,7 @@
-const todoState = (state = [{id: 1, title: 'create todos', body: 'see above', completed: false}], action) => {
+const todoState = (state=[], action) => {
     switch (action.type) {
+      case 'LOAD_STATE':
+        return action.payload
       case 'ADD_TODO':
         return state.concat([action.payload])
       case 'TOGGLE_TODO':
