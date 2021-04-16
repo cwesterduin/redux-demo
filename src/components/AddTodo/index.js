@@ -1,17 +1,17 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
-import { addTodo } from '../../actions';
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTodo } from "../../actions";
 
 const AddTodo = ({ newId }) => {
-  const [title, setTitle] = useState('')
-  const [body, setBody] = useState('')
-  const dispatch = useDispatch()
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
+  const dispatch = useDispatch();
 
   function submitTodo(e) {
     e.preventDefault();
-    dispatch(addTodo({title, body, completed: false, id: newId}))
-    setTitle('')
-    setBody('')
+    dispatch(addTodo({ title, body, completed: false, id: newId }));
+    setTitle("");
+    setBody("");
   }
 
   return (
@@ -48,4 +48,4 @@ const AddTodo = ({ newId }) => {
   );
 };
 
-export default AddTodo
+export default AddTodo;
