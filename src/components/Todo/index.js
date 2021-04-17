@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toggleTodo } from "../../actions";
+import { toggleTodo, deleteTodo } from "../../actions";
 import { NavLink } from "react-router-dom";
 import { DeleteButton, AddTodo } from ".."
 
