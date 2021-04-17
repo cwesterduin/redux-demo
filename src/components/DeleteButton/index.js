@@ -1,21 +1,12 @@
 import React from 'react'
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux'
 import { deleteTodo } from "../../actions";
 
-const DeleteButton = ({ todoId }) => {
-    const dispatch = useDispatch();
-
-    function handleClick(){
-        if (confirm('are you sure?')) {
-            // Save it!
-            dispatch(deleteTodo(todoId))
-          } else {
-            // Do nothing!
-          }
-    }
+const DeleteButton = ({ todoId, handleClick }) => {
 
     return (
-        <button onClick={handleClick}>🗑</button>
+        <button onClick={() => handleClick(todoId)}>delete</button>
     )
 }
 

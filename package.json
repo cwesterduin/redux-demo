@@ -10,7 +10,7 @@
     }
   },
   "scripts": {
-    "test": "jest --watch --silent --verbose --setupFilesAfterEnv ./src/test/setupTests.js",
+    "test": " jest --watch --verbose=false --silent=false --setupFilesAfterEnv ./src/test/setupTests.js",
     "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --silent --watchAll=false",
     "dev": "webpack-cli serve --mode development --config config/webpack.config.dev.js",
     "build": "webpack --config config/webpack.config.production.js"

@@ -11,10 +11,15 @@ const Todo = ({ title, body, completed, todoId }) => {
   function handleCheck() {
     dispatch(toggleTodo(todoId));
   }
+
+  function runDelete(todoId){
+    dispatch(deleteTodo(todoId))
+}
+
   return !editing ? (
     <tr>
       <td>
-        <DeleteButton todoId={todoId} />
+        <DeleteButton handleClick={runDelete} todoId={todoId} />
         <button onClick={() => setEditing((e) => !e)}>✎</button>
         {title}
         <NavLink style={{ float: "right" }} to={`/todo/${todoId}`}>
