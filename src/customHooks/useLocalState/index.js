@@ -9,7 +9,7 @@ function useLocalState() {
 
   useEffect(() => {
     const storeState = localStorage.getItem("state");
-    if (storeState.length > 2) {
+    if (storeState && storeState.length > 2) {
       dispatch(loadState(JSON.parse(storeState)));
     } else {
     }
